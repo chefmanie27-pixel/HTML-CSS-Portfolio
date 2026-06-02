@@ -6,8 +6,8 @@ A modern, high-end personal portfolio website built to showcase my transition fr
 
 ## 🚀 Live Demo & Repository
 
-- **GitHub Repository:** [Insert GitHub Link Here]
-- **Live Deployment:** [Insert GitHub Pages/Netlify Link Here]
+- **GitHub Repository:** https://github.com/chefmanie27-pixel/HTML-CSS-Portfolio.git
+- **Live Deployment:** https://chefmanie27-pixel.github.io/HTML-CSS-Portfolio/
 
 ---
 
