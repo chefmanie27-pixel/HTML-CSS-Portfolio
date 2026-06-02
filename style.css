@@ -1,16 +1,23 @@
+/* ==========================================
+   1. Global Resets & Base Styles
+   ========================================== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Base styles */
 body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header & Nav */
+/* ==========================================
+   2. Header & Navigation Layout
+   ========================================== */
 header {
   background-color: #1a1a1a; 
   color: white;
@@ -25,6 +32,18 @@ header {
   box-sizing: border-box;
   z-index: 100;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff2a54; 
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: rgb(252, 249, 249);
 }
 
 ul {
@@ -52,20 +71,9 @@ nav a:hover {
   color: #ff6a00; 
 }
 
-/* Logo */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff2a54; 
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.logo span {
-  color: rgb(252, 249, 249);
-}
-
-/* Hero Section */
+/* ==========================================
+   3. Hero Section
+   ========================================== */
 .hero {
   background: linear-gradient(-45deg, #ff2a54, #ff6a00, #ff2a54, #ff6a00); 
   width: 100%;
@@ -81,33 +89,18 @@ nav a:hover {
   animation: gradientBG 9s ease infinite;
 }
 
-/* Updated Keyframes for visible movement */
 @keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-/* Gradient-Matched Frosted Glass Showcase Card */
 .hero_card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 42, 84, 0.15) 0%, 
-    rgba(255, 106, 0, 0.1) 100%    
-  );
-  
+  background: linear-gradient(135deg, rgba(255, 42, 84, 0.15) 0%, rgba(255, 106, 0, 0.1) 100%);
   border: 1px solid rgba(255, 255, 255, 0.12); 
   border-radius: 24px;
   padding: 50px 40px;
   backdrop-filter: blur(18px); 
   -webkit-backdrop-filter: blur(18px);
-  
   max-width: 550px;
   width: 100%;
   display: flex;
@@ -128,7 +121,6 @@ nav a:hover {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Quote Layout */
 .quote-container {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.85);
@@ -148,7 +140,6 @@ nav a:hover {
   display: block;
 }
 
-/* Premium Contrast Button */
 .hero_btn {
   display: inline-block; 
   padding: 12px 32px;
@@ -170,37 +161,69 @@ nav a:hover {
 }
 
 /* ==========================================
-   Skills Table Styles 
+   4. Shared Page Layout Adjustments
    ========================================== */
-
-/* Main layout fix to prevent content hiding under the fixed header */
-.skills_main {
+.skills_main, .journey_main, .about_main, .contact_main {
   padding-top: 140px; 
-  max-width: 1100px;
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 60px; /* Space at the bottom of the page */
+  padding-bottom: 80px;
+  margin: 0 auto;
 }
 
+.skills_main, .contact_main { max-width: 1100px; }
+.journey_main { max-width: 800px; }
+.about_main { max-width: 1000px; }
+
+.skills_body, .journey_body, .about_body, .contact_body {
+  margin: 0;
+  padding: 0;
+  background-color: #faf8f7; 
+  background-attachment: fixed;
+}
+
+.skills_body {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
+}
+.journey_body {
+  background-image: 
+    radial-gradient(at 0% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%);
+}
+.about_body {
+  background-image: 
+    radial-gradient(at 100% 100%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
+}
+.contact_body {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%);
+}
+
+/* ==========================================
+   5. Skills Table & CTA Elements
+   ========================================== */
 .skills {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.skills h1 {
+.skills h1, .journey_intro h1, .contact_intro h1 {
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 10px;
 }
 
-.skills p {
+.skills p, .journey_intro p, .contact_intro p {
   color: #666;
   font-size: 1.1rem;
-  margin-bottom: 40px;
 }
 
-/* Table Container for responsiveness */
+.skills p { margin-bottom: 40px; }
+
 .skills-table {
   width: 100%;
   border-collapse: separate;
@@ -211,7 +234,6 @@ nav a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Table Header */
 .skills-table thead tr {
   background: linear-gradient(135deg, #ff2a54, #ff6a00);
   color: #ffffff;
@@ -227,56 +249,40 @@ nav a:hover {
   padding: 18px 24px;
 }
 
-/* Table Body Row Styling */
 .skills-table tbody tr {
   border-bottom: 1px solid #eeeeee;
   transition: background-color 0.2s ease;
   background-color: #ffffff;
 }
 
-/* Alternating Row Colors */
 .skills-table tbody tr:nth-of-type(even) {
   background-color: #fcfcfc;
 }
 
-/* Hover Effect (Frosted subtle pink hint) */
 .skills-table tbody tr:hover {
   background-color: rgba(255, 42, 84, 0.04);
   cursor: default;
 }
 
-/* Last Row Border Fix */
 .skills-table tbody tr:last-of-type {
   border-bottom: 2px solid #ff6a00;
 }
 
-/* Highlighting the Category Column */
 .skills-table td strong {
   color: #ff2a54;
   font-weight: 600;
 }
 
-/* Base styles for Skills Page Layout */
-.skills_body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
-  /* A luxurious, ultra-soft warm backdrop */
-  background-color: #faf8f7; 
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
-  background-attachment: fixed;
-}
-
-/* Unique Button styling for Skills Page context */
 .skills_cta_container {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.skills_btn {
+.skills_btn, .about_btn {
   display: inline-block;
   padding: 14px 36px;
   font-size: 1rem;
@@ -289,53 +295,42 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-.skills_btn:hover {
+.skills_btn:hover, .about_btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
   filter: brightness(1.05);
 }
 
+.skills_btn_outline {
+  display: inline-block;
+  padding: 13px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff2a54;
+  background: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 2px solid #ff2a54;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skills_btn_outline:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff2a54, #ff6a00);
+  border-color: transparent;
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.25);
+}
+
 /* ==========================================
-   Learning Journey Styles 
+   6. Learning Journey Timeline Section
    ========================================== */
-
-.journey_body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #faf8f7; 
-  background-image: 
-    radial-gradient(at 0% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%);
-  background-attachment: fixed;
-}
-
-.journey_main {
-  padding-top: 140px; 
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 80px;
-}
-
 .journey_intro {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.journey_intro h1 {
-  font-size: 2.5rem;
-  color: #1a1a1a;
-  margin-bottom: 10px;
-}
-
-.journey_intro p {
-  color: #666;
-  font-size: 1.1rem;
-}
-
-/* Timeline Layout Elements */
 .timeline {
   position: relative;
   border-left: 3px solid rgba(255, 42, 84, 0.15);
@@ -349,7 +344,6 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-/* Timeline Interactive Dots */
 .timeline_dot {
   position: absolute;
   width: 14px;
@@ -378,7 +372,6 @@ nav a:hover {
   margin-bottom: 5px;
 }
 
-/* Glassmorphism Timeline Cards */
 .timeline_content {
   background: #ffffff;
   padding: 25px;
@@ -393,7 +386,6 @@ nav a:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Highlight style for present tech state */
 .timeline_content.highlight {
   border-left: 4px solid #ff2a54;
   background: linear-gradient(to right, rgba(255, 42, 84, 0.01), #ffffff);
@@ -420,7 +412,6 @@ nav a:hover {
   font-size: 0.95rem;
 }
 
-/* Bottom Journey CTA styling */
 .journey_cta_container {
   text-align: center;
   margin-top: 50px;
@@ -446,30 +437,8 @@ nav a:hover {
 }
 
 /* ==========================================
-   About Me Page Styles 
+   7. About Me Styling
    ========================================== */
-
-.about_body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #faf8f7; 
-  background-image: 
-    radial-gradient(at 100% 100%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
-  background-attachment: fixed;
-}
-
-.about_main {
-  padding-top: 140px; 
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 80px;
-}
-
-/* Profile Content Section */
 .about_profile {
   display: flex;
   align-items: center;
@@ -482,7 +451,7 @@ nav a:hover {
   max-width: 750px;
 }
 
-.about_subtitle {
+.about_subtitle, .contact_subtitle {
   display: block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -498,14 +467,13 @@ nav a:hover {
   margin: 0 0 20px 0;
 }
 
-.about_text p {
+.about_text p, .about_cta_container p {
   color: #555;
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
-/* Philosophy 3-Column Grid Layout */
 .about_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -552,91 +520,25 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Bottom Profile CTA Layout */
 .about_cta_container {
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding-top: 40px;
 }
 
-.about_cta_container p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.about_btn {
-  display: inline-block;
-  padding: 14px 36px;
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #ff2a54, #ff6a00);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
-  transition: all 0.3s ease;
-}
-
-.about_btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
-  filter: brightness(1.05);
-}
-
 /* ==========================================
-   Contact Page Styles 
+   8. Contact Information & Processing Form
    ========================================== */
-
-.contact_body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #faf8f7; 
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%);
-  background-attachment: fixed;
-}
-
-.contact_main {
-  padding-top: 140px; 
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 80px;
-}
-
 .contact_intro {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.contact_subtitle {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #ff6a00;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-}
-
-.contact_intro h1 {
-  font-size: 2.5rem;
-  color: #1a1a1a;
-  margin: 0 0 10px 0;
-}
-
 .contact_intro p {
-  color: #666;
-  font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Form & Info Layout Wrap */
 .contact_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -648,7 +550,6 @@ nav a:hover {
   border: 1px solid rgba(0, 0, 0, 0.01);
 }
 
-/* Left Column Info Details */
 .contact_info {
   padding-right: 20px;
 }
@@ -704,7 +605,6 @@ nav a:hover {
   color: #ff2a54;
 }
 
-/* Right Column Input Processing Elements */
 .contact_form {
   display: flex;
   flex-direction: column;
@@ -745,7 +645,6 @@ nav a:hover {
   box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.12);
 }
 
-/* Beautiful Action Button */
 .contact_submit_btn {
   display: inline-block;
   padding: 14px 30px;
@@ -768,28 +667,15 @@ nav a:hover {
   filter: brightness(1.05);
 }
 
-/* Responsive adjustments for narrow viewports */
-@media (max-width: 480px) {
-  .contact_container {
-    padding: 25px 20px;
-  }
-  .contact_submit_btn {
-    width: 100%;
-    align-self: center;
-  }
-}
-
 /* ==========================================
-   Global Footer Styles 
+   9. Structural Site Footer
    ========================================== */
-
 footer {
   background-color: #1a1a1a;
   color: rgba(255, 255, 255, 0.7);
   padding: 60px 20px 20px 20px;
-  margin-top: auto; /* Pushes footer down if page content is short */
+  margin-top: auto; 
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .footer_container {
@@ -801,7 +687,6 @@ footer {
   padding-bottom: 40px;
 }
 
-/* Brand Column */
 .footer_brand .logo {
   margin-bottom: 15px;
 }
@@ -813,7 +698,6 @@ footer {
   max-width: 320px;
 }
 
-/* Header Columns */
 .footer_links h4,
 .footer_socials h4 {
   color: #ffffff;
@@ -823,7 +707,6 @@ footer {
   margin: 0 0 20px 0;
 }
 
-/* Nav Link Redefinitions for Footer */
 .footer_links ul {
   display: flex;
   flex-direction: column;
@@ -841,7 +724,6 @@ footer {
   color: #ff6a00;
 }
 
-/* Social Icon Blocks */
 .social_icons {
   display: flex;
   gap: 15px;
@@ -863,7 +745,6 @@ footer {
   background-color: #ff2a54;
 }
 
-/* Copyright Bar */
 .footer_bottom {
   max-width: 1100px;
   margin: 0 auto;
@@ -877,95 +758,70 @@ footer {
   margin: 0;
 }
 
-/* Flex layout backup rule to ensure footers stay low on short viewport heights */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-
 /* ==========================================
-   ADDED RESPONSIVE MEDIA QUERIES
+   10. Media Queries & Responsive Layouts
    ========================================== */
 
-/* Tablet & Smaller Devices (992px and below) */
+/* Tablet & Smaller Devices */
 @media (max-width: 992px) {
   header {
     padding: 15px 25px;
   }
-
   .skills_main, .journey_main, .about_main, .contact_main {
-    padding-top: 100px; /* Accounts for narrower header on mobile */
+    padding-top: 100px; 
   }
-
   .about_text h1 {
     font-size: 2.3rem;
   }
 }
 
-/* Small Tablets / Large Phones (768px and below) */
+/* Small Tablets / Large Phones */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 15px;
     text-align: center;
-    position: static; /* Allows natural layout flow if menu elements wrap */
   }
-
   .skills_main, .journey_main, .about_main, .contact_main {
-    padding-top: 40px; 
+    padding-top: 140px; 
   }
-
   ul {
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
   }
-
   .hero {
     height: auto;
     padding: 80px 20px;
   }
-
   .hero_card {
     padding: 35px 20px;
   }
 
-  /* Transform table into card layout for smaller screens */
-  .skills-table, 
-  .skills-table thead, 
-  .skills-table tbody, 
-  .skills-table th, 
-  .skills-table td, 
-  .skills-table tr {
+  /* Structural UI Flattening for Native Responsive Mobile Tables */
+  .skills-table, .skills-table thead, .skills-table tbody, .skills-table th, .skills-table td, .skills-table tr {
     display: block;
     width: 100%;
   }
-
   .skills-table thead {
-    display: none; /* Hide standard headers */
+    display: none; 
   }
-
   .skills-table tbody tr {
     margin-bottom: 20px;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
   }
-
   .skills-table td {
     text-align: right;
     padding-left: 50%;
     position: relative;
     border-bottom: 1px solid #f1f1f1;
+    box-sizing: border-box;
   }
-
   .skills-table td:last-child {
     border-bottom: none;
   }
-
-  /* Dynamically generate pseudo table headers on mobile */
   .skills-table td::before {
     content: attr(data-label);
     position: absolute;
@@ -976,50 +832,44 @@ body {
     font-weight: 600;
     color: #1a1a1a;
   }
-
   .skills-table td strong {
     display: inline-block;
   }
 
-  /* Timeline line adjustment */
   .timeline {
     border-left: 2px solid rgba(255, 42, 84, 0.15);
     padding-left: 20px;
   }
-
   .timeline_dot {
     left: -29px;
     top: 22px;
   }
 }
 
-/* Extra Small Mobile Devices (480px and below) */
+/* Extra Small Mobile Devices */
 @media (max-width: 480px) {
-  .logo {
-    font-size: 20px;
+  .logo { font-size: 20px; }
+  li { font-size: 0.8rem; }
+  .quote-container { font-size: 1rem; }
+  .skills h1, .journey_intro h1, .contact_intro h1 { font-size: 2rem; }
+  .about_text h1 { font-size: 1.8rem; }
+  
+  .skills_cta_container {
+    flex-direction: column;
+    gap: 15px;
   }
-
-  li {
-    font-size: 0.8rem;
+  .skills_btn, .skills_btn_outline {
+    width: 80%;
+    box-sizing: border-box;
   }
-
-  .quote-container {
-    font-size: 1rem;
-  }
-
-  .skills h1, .journey_intro h1, .contact_intro h1 {
-    font-size: 2rem;
-  }
-
-  .about_text h1 {
-    font-size: 1.8rem;
-  }
-
   .contact_container {
     padding: 20px;
     gap: 25px;
   }
-
+  .contact_submit_btn {
+    width: 100%;
+    align-self: center;
+  }
   .footer_container {
     gap: 30px;
   }
