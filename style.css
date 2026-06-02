@@ -1,0 +1,1026 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+}
+
+/* Header & Nav */
+header {
+  background-color: #1a1a1a; 
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  display: flex;
+}
+
+li {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: #ff6a00; 
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff2a54; 
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: rgb(252, 249, 249);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(-45deg, #ff2a54, #ff6a00, #ff2a54, #ff6a00); 
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px 20px 20px 20px; 
+  background-size: 400% 400%;
+  animation: gradientBG 9s ease infinite;
+}
+
+/* Updated Keyframes for visible movement */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Gradient-Matched Frosted Glass Showcase Card */
+.hero_card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 42, 84, 0.15) 0%, 
+    rgba(255, 106, 0, 0.1) 100%    
+  );
+  
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: 24px;
+  padding: 50px 40px;
+  backdrop-filter: blur(18px); 
+  -webkit-backdrop-filter: blur(18px);
+  
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem); 
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Quote Layout */
+.quote-container {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 30px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.quote-container blockquote {
+  margin: 0 0 8px 0;
+  font-style: italic;
+}
+
+.quote-container cite {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  display: block;
+}
+
+/* Premium Contrast Button */
+.hero_btn {
+  display: inline-block; 
+  padding: 12px 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: white; 
+  color: #ff2a54;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  background-color: #f8f9fa;
+}
+
+/* ==========================================
+   Skills Table Styles 
+   ========================================== */
+
+/* Main layout fix to prevent content hiding under the fixed header */
+.skills_main {
+  padding-top: 140px; 
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px; /* Space at the bottom of the page */
+}
+
+.skills {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.skills p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Table Container for responsiveness */
+.skills-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Header */
+.skills-table thead tr {
+  background: linear-gradient(135deg, #ff2a54, #ff6a00);
+  color: #ffffff;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.skills-table th, 
+.skills-table td {
+  padding: 18px 24px;
+}
+
+/* Table Body Row Styling */
+.skills-table tbody tr {
+  border-bottom: 1px solid #eeeeee;
+  transition: background-color 0.2s ease;
+  background-color: #ffffff;
+}
+
+/* Alternating Row Colors */
+.skills-table tbody tr:nth-of-type(even) {
+  background-color: #fcfcfc;
+}
+
+/* Hover Effect (Frosted subtle pink hint) */
+.skills-table tbody tr:hover {
+  background-color: rgba(255, 42, 84, 0.04);
+  cursor: default;
+}
+
+/* Last Row Border Fix */
+.skills-table tbody tr:last-of-type {
+  border-bottom: 2px solid #ff6a00;
+}
+
+/* Highlighting the Category Column */
+.skills-table td strong {
+  color: #ff2a54;
+  font-weight: 600;
+}
+
+/* Base styles for Skills Page Layout */
+.skills_body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* A luxurious, ultra-soft warm backdrop */
+  background-color: #faf8f7; 
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Unique Button styling for Skills Page context */
+.skills_cta_container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.skills_btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff2a54, #ff6a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skills_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+}
+
+/* ==========================================
+   Learning Journey Styles 
+   ========================================== */
+
+.journey_body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #faf8f7; 
+  background-image: 
+    radial-gradient(at 0% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.journey_main {
+  padding-top: 140px; 
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+}
+
+.journey_intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.journey_intro h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.journey_intro p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Timeline Layout Elements */
+.timeline {
+  position: relative;
+  border-left: 3px solid rgba(255, 42, 84, 0.15);
+  margin: 0 auto;
+  padding-left: 30px;
+  max-width: 650px;
+}
+
+.timeline_item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Timeline Interactive Dots */
+.timeline_dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 3px solid #ff6a00;
+  border-radius: 50%;
+  left: -39px;
+  top: 24px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timeline_item:hover .timeline_dot {
+  background-color: #ff2a54;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 42, 84, 0.5);
+}
+
+.timeline_date {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff6a00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+/* Glassmorphism Timeline Cards */
+.timeline_content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline_content:hover {
+  transform: translateX(5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Highlight style for present tech state */
+.timeline_content.highlight {
+  border-left: 4px solid #ff2a54;
+  background: linear-gradient(to right, rgba(255, 42, 84, 0.01), #ffffff);
+}
+
+.timeline_content h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+
+.timeline_location {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #ff2a54;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.timeline_content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Bottom Journey CTA styling */
+.journey_cta_container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.journey_btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.journey_btn:hover {
+  transform: translateY(-2px);
+  background-color: #ff2a54;
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+}
+
+/* ==========================================
+   About Me Page Styles 
+   ========================================== */
+
+.about_body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #faf8f7; 
+  background-image: 
+    radial-gradient(at 100% 100%, rgba(255, 42, 84, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(255, 106, 0, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.about_main {
+  padding-top: 140px; 
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+}
+
+/* Profile Content Section */
+.about_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about_text {
+  max-width: 750px;
+}
+
+.about_subtitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff6a00;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.about_text h1 {
+  font-size: 2.8rem;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+}
+
+.about_text p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Philosophy 3-Column Grid Layout */
+.about_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.grid_card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.grid_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card_icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.grid_card h3 {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.grid_card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.grid_card em {
+  color: #ff2a54;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Bottom Profile CTA Layout */
+.about_cta_container {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 40px;
+}
+
+.about_cta_container p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.about_btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff2a54, #ff6a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+}
+
+/* ==========================================
+   Contact Page Styles 
+   ========================================== */
+
+.contact_body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #faf8f7; 
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 42, 84, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 106, 0, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.contact_main {
+  padding-top: 140px; 
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+}
+
+.contact_intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact_subtitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff6a00;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.contact_intro h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+}
+
+.contact_intro p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form & Info Layout Wrap */
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+/* Left Column Info Details */
+.contact_info {
+  padding-right: 20px;
+}
+
+.contact_info h3 {
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+}
+
+.contact_info > p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.info_icon {
+  font-size: 1.4rem;
+  background: rgba(255, 42, 84, 0.08);
+  padding: 10px;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+.info_item h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.info_item p, 
+.info_item a {
+  margin: 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.info_item a:hover {
+  color: #ff2a54;
+}
+
+/* Right Column Input Processing Elements */
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.form_group input,
+.form_group textarea {
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background-color: #fcfcfc;
+  transition: all 0.2s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  outline: none;
+  border-color: #ff2a54;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.12);
+}
+
+/* Beautiful Action Button */
+.contact_submit_btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff2a54, #ff6a00);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.contact_submit_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+}
+
+/* Responsive adjustments for narrow viewports */
+@media (max-width: 480px) {
+  .contact_container {
+    padding: 25px 20px;
+  }
+  .contact_submit_btn {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+/* ==========================================
+   Global Footer Styles 
+   ========================================== */
+
+footer {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 60px 20px 20px 20px;
+  margin-top: auto; /* Pushes footer down if page content is short */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.footer_container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+/* Brand Column */
+.footer_brand .logo {
+  margin-bottom: 15px;
+}
+
+.footer_brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* Header Columns */
+.footer_links h4,
+.footer_socials h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+}
+
+/* Nav Link Redefinitions for Footer */
+.footer_links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer_links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer_links a:hover {
+  color: #ff6a00;
+}
+
+/* Social Icon Blocks */
+.social_icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social_icons a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.social_icons a:hover {
+  color: #fff;
+  border-color: #ff2a54;
+  background-color: #ff2a54;
+}
+
+/* Copyright Bar */
+.footer_bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer_bottom p {
+  margin: 0;
+}
+
+/* Flex layout backup rule to ensure footers stay low on short viewport heights */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* ==========================================
+   ADDED RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* Tablet & Smaller Devices (992px and below) */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 25px;
+  }
+
+  .skills_main, .journey_main, .about_main, .contact_main {
+    padding-top: 100px; /* Accounts for narrower header on mobile */
+  }
+
+  .about_text h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* Small Tablets / Large Phones (768px and below) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    position: static; /* Allows natural layout flow if menu elements wrap */
+  }
+
+  .skills_main, .journey_main, .about_main, .contact_main {
+    padding-top: 40px; 
+  }
+
+  ul {
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero_card {
+    padding: 35px 20px;
+  }
+
+  /* Transform table into card layout for smaller screens */
+  .skills-table, 
+  .skills-table thead, 
+  .skills-table tbody, 
+  .skills-table th, 
+  .skills-table td, 
+  .skills-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .skills-table thead {
+    display: none; /* Hide standard headers */
+  }
+
+  .skills-table tbody tr {
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  }
+
+  .skills-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .skills-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Dynamically generate pseudo table headers on mobile */
+  .skills-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 20px;
+    width: 45%;
+    padding-right: 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .skills-table td strong {
+    display: inline-block;
+  }
+
+  /* Timeline line adjustment */
+  .timeline {
+    border-left: 2px solid rgba(255, 42, 84, 0.15);
+    padding-left: 20px;
+  }
+
+  .timeline_dot {
+    left: -29px;
+    top: 22px;
+  }
+}
+
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 0.8rem;
+  }
+
+  .quote-container {
+    font-size: 1rem;
+  }
+
+  .skills h1, .journey_intro h1, .contact_intro h1 {
+    font-size: 2rem;
+  }
+
+  .about_text h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact_container {
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .footer_container {
+    gap: 30px;
+  }
+}
