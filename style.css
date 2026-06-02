@@ -95,7 +95,7 @@ nav a:hover {
 }
 
 .hero_card {
-  background: linear-gradient(135deg, rgba(255, 42, 84, 0.15) 0%, rgba(255, 106, 0, 0.1) 100%);
+  background: black;
   border: 1px solid rgba(255, 255, 255, 0.12); 
   border-radius: 24px;
   padding: 50px 40px;
